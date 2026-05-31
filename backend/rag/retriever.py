@@ -2,14 +2,16 @@ import faiss
 import pickle
 import numpy as np
 
-from rag.embedder import model
+from rag.embedder import get_model
+
+# Load model once when application starts
+model = get_model()
 
 
 def retrieve_chunks(
     query,
     top_k=5
 ):
-
     index = faiss.read_index(
         "data/faiss_index/index.bin"
     )
@@ -18,7 +20,6 @@ def retrieve_chunks(
         "data/chunks.pkl",
         "rb"
     ) as f:
-
         chunks = pickle.load(f)
 
     query_embedding = model.encode(

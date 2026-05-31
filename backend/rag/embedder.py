@@ -2,11 +2,11 @@ from sentence_transformers import SentenceTransformer
 
 _model = None
 
+
 def get_model():
     global _model
 
     if _model is None:
-        print("Loading embedding model...")
         _model = SentenceTransformer(
             "all-MiniLM-L6-v2"
         )
@@ -15,7 +15,10 @@ def get_model():
 
 
 def embed_chunks(chunks):
-
     model = get_model()
 
-    return model.encode(chunks)
+    embeddings = model.encode(
+        chunks
+    )
+
+    return embeddings
