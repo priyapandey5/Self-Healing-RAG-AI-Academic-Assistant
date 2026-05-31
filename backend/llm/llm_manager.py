@@ -7,31 +7,10 @@ def llm_response(query, conversation=None):
 
     similar_chunks = retrieve_chunks(query)
 
-    context = ""
-
-    sources = []
-
-    for chunk in similar_chunks:
-
-        if isinstance(chunk, dict):
-
-            context += chunk.get(
-                "text",
-                ""
-            ) + "\n\n"
-
-            source = chunk.get(
-                "source",
-                "Unknown Source"
-            )
-
-            sources.append(source)
-
-        else:
-
-            context += str(chunk) + "\n\n"
-
-    sources = list(set(sources))
+    context = "\n\n".join(
+        str(chunk)
+        for chunk in similar_chunks
+    )
 
     print("\n===== RETRIEVED CONTEXT =====")
     print(context)
@@ -52,16 +31,7 @@ def llm_response(query, conversation=None):
             contents=prompt
         )
 
-        answer = response.text
-
-        if sources:
-
-            answer += "\n\n📄 Sources:\n"
-
-            for source in sources:
-                answer += f"\n• {source}"
-
-        return answer
+        return response.text
 
     except Exception as e:
 
