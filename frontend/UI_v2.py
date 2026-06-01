@@ -5,10 +5,12 @@ import requests
 # Backend URL
 # ----------------------------------
 
-try:
-    BACKEND_URL = st.secrets["BACKEND_URL"]
-except:
-    BACKEND_URL = "http://127.0.0.1:8000"
+import os
+
+BACKEND_URL = os.getenv(
+    "BACKEND_URL",
+    "http://127.0.0.1:8000"
+)
 
 # ----------------------------------
 # Page Config
