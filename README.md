@@ -89,5 +89,4 @@ FAISS Index Creation
         ↓
 Academic Assistant
 
-<img width="1920" height="1080" alt="Screenshot (123)" src="https://github.com/user-attachments/assets/f3fa2147-ca75-4954-b014-d01c74eb1a26" />
-
+<img width="1920" height="835" alt="Screenshot (123)" src="https://github.com/user-attachments/assets/c526748f-6097-49fa-ab6f-0c28c9abd763" />
