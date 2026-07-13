@@ -9,6 +9,21 @@ app = FastAPI(
 )
 
 
+# -------------------------
+# ROOT ROUTE
+# Railway Health Check
+# -------------------------
+@app.get("/")
+def root():
+    return {
+        "status": "healthy",
+        "message": "RAG Chatbot API is running"
+    }
+
+
+# -------------------------
+# HEALTHCHECK ROUTE
+# -------------------------
 @app.get("/health")
 def health():
     return {
@@ -16,5 +31,8 @@ def health():
     }
 
 
+# -------------------------
+# API ROUTES
+# -------------------------
 app.include_router(chat_router)
 app.include_router(upload_router)
