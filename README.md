@@ -2,7 +2,7 @@
 
 An intelligent Retrieval-Augmented Generation (RAG) chatbot capable of automatically correcting failed retrieval attempts using an AI Critic Agent before generating the final response.
 
-Unlike traditional RAG systems, this project introduces a **Self-Healing Retrieval Pipeline**, where an LLM Critic evaluates generated answers and rewrites the user query whenever retrieval quality is insufficient.
+Unlike traditional RAG systems, this project introduces a **Self-Healing Retrieval Pipeline**, where an LLM Critic evaluates generated answers and rewrites the user query whenever retrieval quality is insufficient.,
 
 ---
 <img width="1920" height="831" alt="Screenshot 2026-07-23 080358" src="https://github.com/user-attachments/assets/02fc848b-f62f-4e6e-937c-31438feff77f" />
